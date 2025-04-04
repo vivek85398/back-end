@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <div class="main min-h-screen w-full bg-gray-200">
+        <nav class="pt-[2vw] px-[2vw]">
+            <div class="navcontainer flex justify-between">
+                <h1 class="font-semibold text-[2vw]">Note App</h1>
+                <a href="/create" class="font-medium text-[1.5vw] text-blue-800">Create note</a>
+            </div>
+        </nav>
+        <section class=" px-[3.5vw]">
+            <p class="font-semibold text-[1.7vw] mt-[2vh]">All Notes</p>
+            <div class="flex flex-wrap gap-5 mt-[2vh]">
+                <% files.reverse().forEach(function(file){ %>
+                    <div class="cardcontainer w-[22vw] h-[25vh] bg-gray-100 rounded-xl shadow-2xl mt-[2vh] px-[1.5vw] pt-[1.5vh]">
+                        <h2 class="font-semibold text-[2vw]"> <%= file.name %> </h2>
+                        <p class="font-medium text-[1.4vw] mt-[1vh] mb-[5vh]">June 15,2025</p>
+                        <div class="detail flex justify-between">
+                            <a href="/show/<%= file.name %>" class="font-medium text-[1.2vw] text-blue-800">View <i class="ri-eye-fill"></i></a>
+                            <a href="/delete/<%= file.name %>" class="font-medium text-[1.2vw] text-red-500">Delete <i class="ri-delete-bin-fill"></i></a>
+                            <a href="/edit/<%= file.name %>" class="font-medium text-[1.2vw] text-blue-800">Edit <i class="ri-pencil-fill"></i></a>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+</body>
+</html>

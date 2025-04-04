@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <div class="main min-h-screen w-full bg-gray-200">
+        <nav class="pt-[2vw] px-[2vw]">
+            <div class="navcontainer flex justify-between">
+                <h1 class="font-semibold text-[2vw]">User App</h1>
+                <a href="/create" class="font-medium text-[1.5vw] text-blue-800">Create user</a>
+            </div>
+        </nav>
+        <section class=" px-[3.5vw]">
+            <p class="font-semibold text-[1.7vw] mt-[2vh]">All User</p>
+            <div class="flex flex-wrap gap-5 mt-[3vh]">
+                <% users.reverse().forEach(function(user){ %>
+                    <div class="cards w-[22vw] h-[28vh] bg-gray-100 rounded-xl shadow-2xl px-[2vw] py-[2vh] flex flex-col gap-5">
+                        <h3 class="text-xl font-bold text-gray-900">Name: <%= user.name %></h3>
+                        <p class="text-gray-800 text-xl font-semibold">Age: <%= user.age %></p>
+                        <p class="text-gray-800 text-lg font-semibold">Email: <%= user.email %></p>
+                        <div class="detail flex justify-between">
+                            <a href="/delete/<%= user._id %>" class="font-medium text-[1.2vw] text-red-600">Delete <i class="ri-delete-bin-fill"></i></a>
+                            <a href="/edit/<%= user._id %>" class="font-medium text-[1.2vw] text-blue-800">Edit <i class="ri-pencil-fill"></i></a>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+</body>
+</html>
